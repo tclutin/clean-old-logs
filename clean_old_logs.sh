@@ -91,7 +91,8 @@ search_files() {
   readarray -t FILES < <(find "$LOG_PATH" -type f -name "*.log" -mtime +"${DAYS}")
 
   if [[ ${#FILES[@]} -eq 0 ]]; then
-	  log INFO "Файлы старше $DAYS дней с расширением .log не найдены"                   exit 0
+	  log INFO "Файлы старше $DAYS дней с расширением .log не найдены"
+	  exit 0
   fi
 
   log INFO "Найдено ${#FILES[@]} файл(ов) старше $DAYS дней:"
